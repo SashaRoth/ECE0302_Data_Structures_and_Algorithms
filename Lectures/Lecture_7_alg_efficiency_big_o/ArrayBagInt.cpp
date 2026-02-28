@@ -99,7 +99,7 @@ void ArrayBagInt::clear4()
 // alg efficiency depends on that of both getIndexOf and the while-loop
 int ArrayBagInt::getFrequencyOf(const int &anEntry) const
 {
-   if (!contains(anEntry))
+   if (!contains(anEntry)) //adds O(logn) if getIndexOf is O(logn)
    {
       throw std::invalid_argument("Item not found in bag");
    }
@@ -108,7 +108,7 @@ int ArrayBagInt::getFrequencyOf(const int &anEntry) const
    int curIndex = 0; // Current array index
    while (curIndex < itemCount)
    {
-      if (items[curIndex] == anEntry)
+      if (items[curIndex] == anEntry) //complexity of O(n) due to the while loop
       {
          frequency++;
       } // end if

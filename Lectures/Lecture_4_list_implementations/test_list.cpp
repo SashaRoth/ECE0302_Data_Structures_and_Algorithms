@@ -25,7 +25,10 @@ void displayList(ListInterface<std::string> *listPtr)
 void displayList_v2(ListInterface<std::string> &listobj)
 {
    std::cout << "The list contains " << std::endl;
-   // write your statements here to display the list using listobj
+   for (int pos = 1; pos <= listobj.getLength(); pos++)
+   {
+      std::cout << listobj.getEntry(pos) << " ";
+   }
    std::cout << std::endl;
 }
 

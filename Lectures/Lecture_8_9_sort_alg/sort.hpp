@@ -125,7 +125,7 @@ void merge(List<T> &list, int first, int mid, int last)
         // directly copy the other segment
         if (i > mid) // all elements in list[first..mid] are merged, and it becomes empty
         {
-            list.setEntry(k, temp.getEntry(j));
+            list.setEntry(k, temp.getEntry(j)); //complexity O(1)
             j++;
         }
         else if (j > last) // all elements in list[mid+1..last] are merged, and it becomes empty

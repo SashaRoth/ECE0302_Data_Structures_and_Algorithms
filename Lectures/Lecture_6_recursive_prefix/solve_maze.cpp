@@ -4,8 +4,10 @@
 
 searchWithRecursion(currentLocation) : boolean
 {
-  foundExit = false if (currentLocation is the exit)
-      foundExit = true else if (currentLocation is a dead end or was visited)
+  foundExit = false 
+  if (currentLocation is the exit)
+      foundExit = true 
+  else if (currentLocation is a dead end or was visited)
   {
     // Backtrack by returning to caller and signaling no path to exit exists from here
     mark currentLocation as not on path // Red: location not on path to exit

@@ -142,6 +142,93 @@ TEST_CASE("Test remove/clear with timestamp", "[ArrayBagInt]")
 
   // TODO:
   // How would you continue to write more test cases for clear4() method to prove
-
   // Hint: decrease or increase the size of the bag by a factor
 }
+
+TEST_CASE("Test clear4() with timestamp n = 10", "[ArrayBagInt]")
+{
+  ArrayBagInt bag10;
+
+  for (int i = 0; i < 2; i++){
+    bag10.add(i);
+  }
+
+  clock_t start = clock();
+  bag10.clear4();
+  clock_t end = clock();
+  double seconds = (double)(end - start) / CLOCKS_PER_SEC;
+  REQUIRE(bag10.isEmpty());
+  std::cout << "clear4() time used when n = 10: " << seconds << " seconds" << std::endl;
+
+}
+TEST_CASE("Test clear4() with timestamp n = 100", "[ArrayBagInt]")
+{
+  ArrayBagInt bag100;
+
+  for (int i = 0; i < 100; i++)
+  {
+    bag100.add(i);
+  }
+
+  clock_t start = clock();
+  bag100.clear4();
+  clock_t end = clock();
+  double seconds = (double)(end - start) / CLOCKS_PER_SEC;
+  REQUIRE(bag100.isEmpty());
+  std::cout << "clear4() time used when n = 100: " << seconds << " seconds" << std::endl;
+}
+
+TEST_CASE("Test clear4() with timestamp n = 1000", "[ArrayBagInt]")
+{
+  ArrayBagInt bag1000;
+
+  for (int i = 0; i < 1000; i++)
+  {
+    bag1000.add(i);
+  }
+
+  clock_t start = clock();
+  bag1000.clear4();
+  clock_t end = clock();
+  double seconds = (double)(end - start) / CLOCKS_PER_SEC;
+  REQUIRE(bag1000.isEmpty());
+  std::cout << "clear4() time used when n = 1000: " << seconds << " seconds" << std::endl;
+}
+
+TEST_CASE("Test clear4() with timestamp n = 10000", "[ArrayBagInt]")
+{
+  ArrayBagInt bag10000;
+
+  for (int i = 0; i < 10000; i++)
+  {
+    bag10000.add(i);
+  }
+
+  clock_t start = clock();
+  bag10000.clear4();
+  clock_t end = clock();
+  double seconds = (double)(end - start) / CLOCKS_PER_SEC;
+  REQUIRE(bag10000.isEmpty());
+  std::cout << "clear4() time used when n = 10000: " << seconds << " seconds" << std::endl;
+}
+
+TEST_CASE("Test clear4() with timestamp n = 100000", "[ArrayBagInt]")
+{
+  ArrayBagInt bag100000;
+
+  for (int i = 0; i < 100000; i++)
+  {
+    bag100000.add(i);
+  }
+
+  clock_t start = clock();
+  bag100000.clear4();
+  clock_t end = clock();
+  double seconds = (double)(end - start) / CLOCKS_PER_SEC;
+  REQUIRE(bag100000.isEmpty());
+  std::cout << "clear4() time used when n = 100000: " << seconds << " seconds" << std::endl;
+}
+
+//when the magnitude of n increases by a factor of 10, the time used for clear4() 
+//increases by a factor of 100, which indicates that the time complexity of 
+//clear4() is O(n^2).
